@@ -1,8 +1,8 @@
 {
-  "name": "boilerplate-react-vite",
+  "name": "footnote-mvw",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://coderseoul.github.io/mvw-namecard-maker/",
+  "homepage": "https://mvw-hjjeong.github.io/footnote-mvw/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
