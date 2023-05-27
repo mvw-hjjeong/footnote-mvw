@@ -117,7 +117,7 @@ const makeHtml = ({
           <tbody>
             <tr>
               <td style='width:245px; padding-right: 20px;'>
-                <img alt='' src='https://tistory1.daumcdn.net/tistory/4647873/skinSetting/761a256b97e84b1a86a335b334cfd269' alt='alt_text' style='z-index: 1;width: 100%; height: auto; font-family: sans-serif; ' />
+                <img alt='' src='https://github.com/mvw-hjjeong/footnote-mvw/blob/main/assets/logo.png?raw=true' alt='alt_text' style='z-index: 1;width: 100%; height: auto; font-family: sans-serif; ' />
               </td>
               <td style='padding-left: 20px;border-left:#0463EF 1px solid;'>
                 <table cellpadding='0' cellspacing='0' style='color:rgb(6, 4, 3);vertical-align: -webkit-baseline-middle; font-family: ${FONT_FAMILY};'>
