@@ -15,5 +15,8 @@ export default defineConfig(configEnv => ({
     }),
     svgrPlugin(),
   ],
+  build: {
+    outDir: './build',
+  },
   base: './',
 }))
