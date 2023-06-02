@@ -28,7 +28,6 @@ interface IForm {
   smartphone: string;
   mail: string;
   companyCall: string;
-  companyMail: string;
   companySite: string;
 }
 
@@ -40,10 +39,9 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const FONT_FAMILY = "NanumSquare,Arial";
-const FONT_SIZE_SMALL = 15;
-const FONT_SIZE_MIDIUM = 16;
-const FONT_SIZE_LARGE = 25;
-const MARGIN_BY_TABLE = 28;
+const FONT_SIZE_MIDIUM = 14;
+const FONT_SIZE_LARGE = 20;
+const MARGIN_BY_TABLE = 23;
 
 const makeHtml = ({
   name,
@@ -53,11 +51,11 @@ const makeHtml = ({
   smartphone,
   mail,
   companyCall,
-  companyMail,
   companySite,
 }: IForm) => {
   return `
-  <table cellpadding='0' cellspacing='0' style='vertical-align: -webkit-baseline-middle; font-family: ${FONT_FAMILY};width:100%;'>
+<div style='max-width:100vh;overflow: hidden;'>
+  <table cellpadding='0' cellspacing='0' style='vertical-align: -webkit-baseline-middle; font-family: ${FONT_FAMILY};width:100%;transition: transform 0.3s;'>
   <tbody>
     <tr>
       <table cellpadding='0' cellspacing='0' style='vertical-align: -webkit-baseline-middle; font-family: ${FONT_FAMILY};margin-top:10px;margin-left:${MARGIN_BY_TABLE}px;'>
@@ -65,50 +63,50 @@ const makeHtml = ({
           <tr>
             <td style='display: flex;align-items: end;'>
               <p>
-                <span style='font-weight: 750;letter-spacing:8px;font-size: ${FONT_SIZE_LARGE}px; color:#060403 ; '>${name}</span>
+                <span style='font-weight: 750;letter-spacing:8px;font-size: ${FONT_SIZE_LARGE}px; color:#060403 ; white-space: nowrap;'>${name}</span>
               </p>
-              <p style='margin-top:26px;'><small style='margin: 0px; font-size: ${FONT_SIZE_MIDIUM}px; color:#060403 ;margin-right:10px;border-left:#f1f1f1 1px solid; padding-left:12px;'>${department}·${position}</small></p>
+              <p style='margin-top:26px;'><small style='margin: 0px; font-size: ${FONT_SIZE_MIDIUM}px; color:#060403 ;margin-right:10px;border-left:#f1f1f1 1px solid; padding-left:12px;    white-space: nowrap;'>${department}·${position}</small></p>
             </td>
           </tr>
         </tbody>
       </table>
     </tr>
-    <tr style='flex-direction:row;'>
+    <tr>
       <td style='padding: 5px; padding-left: 20px;'>
-        <table cellpadding='0' cellspacing='0' style='vertical-align: -webkit-baseline-middle; font-family: ${FONT_FAMILY};margin-left:${MARGIN_BY_TABLE}px;'>
-          <tbody>
-            <tr>
-              <td style='width: 130px;'>
-                <table cellpadding='0' cellspacing='0' style='vertical-align: -webkit-baseline-middle; ; font-family: ${FONT_FAMILY};width: max-content;margin-right: 20px;'>
-                  <tbody>
-                    <tr>
-                      <td style='display:flex;'>
-                        <img alt='' style='width:23px;' src='https://github.com/mvw-hjjeong/footnote-mvw/blob/main/assets/smartphone.png?raw=true' alt='smartphone' />
-                      </td>
-                      <td style='padding: 0px; color:#060403 ; font-size: ${FONT_SIZE_MIDIUM}px;'>
-                        <span style='margin-left:5px;'>${smartphone}</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-              <td style='width: 130px;'>
-                <table cellpadding='0' cellspacing='0' style='vertical-align: -webkit-baseline-middle; ; font-family: ${FONT_FAMILY};    width: max-content;'>
-                  <tbody>
-                    <tr>
-                      <td style='display:flex;'>
-                        <img style='width:23px;' alt='' src='https://github.com/mvw-hjjeong/footnote-mvw/blob/main/assets/mail.png?raw=true' alt='mail' />
-                      </td>
-                      <td style='padding: 0px; color:#060403 ; font-size: ${FONT_SIZE_MIDIUM}px;'>
-                        <span style='margin-left:5px;'>${mail}@mv-w.com</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div style="overflow: hidden;margin-left:${MARGIN_BY_TABLE}px;">
+          <div class="item" style="display: inline-block;vertical-align: top;margin-right: 10px;margin-bottom: 10px;">
+            <div style='width: 130px;'>
+              <table cellpadding='0' cellspacing='0' style='vertical-align: -webkit-baseline-middle; ; font-family: ${FONT_FAMILY};width: max-content;margin-right: 20px;'>
+                <tbody>
+                  <tr>
+                    <td style='display:flex;'>
+                      <img alt='' style='width:23px;' src='https://github.com/mvw-hjjeong/footnote-mvw/blob/main/assets/smartphone.png?raw=true' alt='smartphone' />
+                    </td>
+                    <td style='padding: 0px; color:#060403 ; font-size: ${FONT_SIZE_MIDIUM}px;'>
+                      <span style='margin-left:5px;white-space: nowrap;'>${smartphone}</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="item" style="display: inline-block;vertical-align: top;margin-right: 10px;margin-bottom: 10px;">
+            <div style='width: 130px;'>
+              <table cellpadding='0' cellspacing='0' style='vertical-align: -webkit-baseline-middle; ; font-family: ${FONT_FAMILY};width: max-content;margin-right: 20px;'>
+                <tbody>
+                  <tr>
+                    <td style='display:flex;'>
+                      <img style='width:23px;' alt='' src='https://github.com/mvw-hjjeong/footnote-mvw/blob/main/assets/mail.png?raw=true' alt='mail' />
+                    </td>
+                    <td style='padding: 0px; color:#060403 ; font-size: ${FONT_SIZE_MIDIUM}px;'>
+                      <span style='margin-left:5px;white-space: nowrap;'>${mail}@mv-w.com</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </td>
     </tr>
     <tr>
@@ -116,7 +114,7 @@ const makeHtml = ({
         <table cellpadding='0' cellspacing='0' style='vertical-align: -webkit-baseline-middle; font-family: ${FONT_FAMILY}; margin-top:${MARGIN_BY_TABLE}px;margin-left:${MARGIN_BY_TABLE}px;'>
           <tbody>
             <tr>
-              <td style='width:245px; padding-right: 20px;'>
+              <td style='width:200px; padding-right: 20px;'>
                 <img alt='' src='https://github.com/mvw-hjjeong/footnote-mvw/blob/main/assets/logo.png?raw=true' alt='alt_text' style='z-index: 1;width: 100%; height: auto; font-family: sans-serif; ' />
               </td>
               <td style='padding-left: 20px;border-left:#0463EF 1px solid;'>
@@ -124,17 +122,12 @@ const makeHtml = ({
                   <tbody>
                     <tr>
                       <td>
-                        <span><b>T</b> : ${companyCall}</span>
+                        <span style="white-space: nowrap;"><b>T</b> : ${companyCall}</span>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        <span><b>M</b> : ${companyMail}@mv-w.com</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span><b>W</b> : ${companySite}</span>
+                        <span style="white-space: nowrap;"><b>W</b> : ${companySite}</span>
                       </td>
                     </tr>
                   </tbody>
@@ -151,7 +144,7 @@ const makeHtml = ({
           <tbody>
             <tr>
               <td>
-                <span style='margin-top:20px;font-size: ${FONT_SIZE_SMALL}px;color:rgb(6, 4, 3)'>㈜모바휠 │ ${address}</span>
+                <span style='margin-top:20px;font-size: ${FONT_SIZE_MIDIUM}px;color:rgb(6, 4, 3);'>주식회사 모바휠 │ ${address}</span>
               </td>
             </tr>
           </tbody>
@@ -160,6 +153,7 @@ const makeHtml = ({
     </tr>
   </tbody>
 </table>
+</div>
   `;
 };
 
@@ -172,7 +166,6 @@ export function App() {
     smartphone: "010-****-****",
     mail: "gdhong",
     companyCall: "070-5015-5978",
-    companyMail: "service",
     companySite: "mv-w.com",
   });
   const [html, setHtml] = useState(makeHtml(info));
@@ -194,7 +187,7 @@ export function App() {
           .replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
         console.log(_value);
       }
-    } else if ((key === "mail" || key === "companyMail") && value.includes('@')) {
+    } else if ((key === "mail") && value.includes('@')) {
       setAlertState({
         isOpen: true,
         message: "@mv-w.com 을 입력할 필요는 없습니다!",
@@ -295,7 +288,7 @@ export function App() {
             </IconButton>
           </Tooltip>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6}>
           <TextField
             label="대표번호"
             disabled={infoLock}
@@ -306,23 +299,7 @@ export function App() {
             value={info.companyCall}
           />
         </Grid>
-        <Grid item xs={12} md={4}>
-          <TextField
-            label="대표메일"
-            disabled={infoLock}
-            fullWidth
-            onChange={(event) => {
-              handleInputChange("companyMail", event.target.value);
-            }}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">@mv-w.com</InputAdornment>
-              ),
-            }}
-            value={info.companyMail}
-          />
-        </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6}>
           <TextField
             label="공식사이트"
             disabled={infoLock}
